@@ -7,6 +7,7 @@ const geocode = require('./utils/geocode')
 
 
 const app = express()
+const port = process.env.PORT || 3000
 // Paths for express
 app.use(express.static(path.join(__dirname, './public')))
 const viewPath = path.join(__dirname, './Templates/views')
@@ -76,6 +77,6 @@ app.get('*',(req,res)=>{
     })
 })
 
-app.listen(3000,()=>{
-    console.log('App listeing on port 3000')
+app.listen(port,()=>{
+    console.log('App listeing on port ' + port)
 })
